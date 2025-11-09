@@ -12,7 +12,7 @@ params = {
     "leverage": 3,
     "margin_mode": "isolated",  # "isolated" or "cross"
     # Take-Profit and Stop-Loss settings
-    "tp_pct": 10,
+    "tp_pct": 9,
     "tp_size_pct": 60,
     "sl_pct": 8,
     # Trailing Stop-Loss settings (set to 0 to disable)
