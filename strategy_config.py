@@ -24,7 +24,9 @@ params = {
     "chop_length": 21,
     "chop_threshold": 1000,  # set to 1000 to disable choppiness filter
 }
-
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# Dont forget to set if long only or short only!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # Trading conditions to ignore
 ignore_longs = True
 ignore_shorts = False
