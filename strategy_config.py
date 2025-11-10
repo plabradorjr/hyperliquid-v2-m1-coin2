@@ -6,7 +6,7 @@ from hyperliquid_client import my_print  # type: ignore
 
 # Trading parameters
 params = {
-    "symbol": "MELANI/USDC:USDC",
+    "symbol": "MELANIA/USDC:USDC",
     "timeframe": "5m",
     "position_size_pct": 140.0,
     "leverage": 3,
