@@ -6,9 +6,9 @@ from hyperliquid_client import my_print  # type: ignore
 
 # Trading parameters
 params = {
-    "symbol": "0G/USDC:USDC",
+    "symbol": "MELANIA/USDC:USDC",
     "timeframe": "5m",
-    "position_size_pct": 150.0,
+    "position_size_pct": 140.0,
     "leverage": 3,
     "margin_mode": "isolated",  # "isolated" or "cross"
     # Take-Profit and Stop-Loss settings
@@ -26,8 +26,8 @@ params = {
 }
 
 # Trading conditions to ignore
-ignore_longs = False
-ignore_shorts = True
+ignore_longs = True
+ignore_shorts = False
 ignore_exit = False
 ignore_tp = False
 ignore_sl = False
