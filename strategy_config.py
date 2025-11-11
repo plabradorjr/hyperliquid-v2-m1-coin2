@@ -16,8 +16,8 @@ params = {
 
 
     # Take-Profit / Stop-Loss
-    "tp_pct": 6,
-    "tp_size_pct": 60,
+    "tp_pct": 4.5,
+    "tp_size_pct": 70,
     "sl_pct": 14,
 
     # Trailing Stop-Loss
