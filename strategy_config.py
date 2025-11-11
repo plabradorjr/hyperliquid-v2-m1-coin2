@@ -4,6 +4,7 @@ import numpy as np
 
 from hyperliquid_client import my_print  # type: ignore
 
+# Metamask 1, coin 2
 params = {
     "symbol": "MELANIA/USDC:USDC",
     "timeframe": "5m",
@@ -15,12 +16,12 @@ params = {
 
 
     # Take-Profit / Stop-Loss
-    "tp_pct": 10,        # matches 95–99th percentile extended moves
-    "tp_size_pct": 70,   # secure most profit on hit
-    "sl_pct": 4,         # slightly above 95% wick depth (1.6%) * 2.5 safety
+    "tp_pct": 8,
+    "tp_size_pct": 70,
+    "sl_pct": 12,
 
     # Trailing Stop-Loss
-    "trailing_sl_pct": 3,  # tight bc wicks rare, volatility sustained
+    "trailing_sl_pct": 12,
 
     # EMA Settings (optimal for breakout bursts)
     "ema_fast": 15,
