@@ -4,25 +4,29 @@ import numpy as np
 
 from hyperliquid_client import my_print  # type: ignore
 
-# Trading parameters
 params = {
     "symbol": "MELANIA/USDC:USDC",
     "timeframe": "5m",
-    "position_size_pct": 110.0,
-    "leverage": 3,
-    "margin_mode": "isolated",  # "isolated" or "cross"
-    # Take-Profit and Stop-Loss settings
-    "tp_pct": 9,
-    "tp_size_pct": 70,
-    "sl_pct": 18,
-    # Trailing Stop-Loss settings (set to 0 to disable)
-    "trailing_sl_pct": 15,
-    # EMA settings
-    "ema_fast": 30,
-    "ema_slow": 40,
-    # Choppiness Index settings
-    "chop_length": 21,
-    "chop_threshold": 1000,  # set to 1000 to disable choppiness filter
+
+    # Position size & leverage
+    "position_size_pct": 80.0,
+    "leverage": 2,
+
+    # Take-Profit / Stop-Loss
+    "tp_pct": 10,        # matches 95–99th percentile extended moves
+    "tp_size_pct": 70,   # secure most profit on hit
+    "sl_pct": 4,         # slightly above 95% wick depth (1.6%) * 2.5 safety
+
+    # Trailing Stop-Loss
+    "trailing_sl_pct": 3,  # tight bc wicks rare, volatility sustained
+
+    # EMA Settings (optimal for breakout bursts)
+    "ema_fast": 15,
+    "ema_slow": 27,
+
+    # Choppiness to avoid grind-phases
+    "chop_length": 14,
+    "chop_threshold": 60,  # >60 = too choppy, skip trades
 }
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # Dont forget to set if long only or short only!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
