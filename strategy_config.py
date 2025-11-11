@@ -16,12 +16,12 @@ params = {
 
 
     # Take-Profit / Stop-Loss
-    "tp_pct": 8,
-    "tp_size_pct": 70,
-    "sl_pct": 12,
+    "tp_pct": 6,
+    "tp_size_pct": 60,
+    "sl_pct": 14,
 
     # Trailing Stop-Loss
-    "trailing_sl_pct": 12,
+    "trailing_sl_pct": 14,
 
     # EMA Settings (optimal for breakout bursts)
     "ema_fast": 15,
