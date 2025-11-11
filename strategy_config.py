@@ -13,10 +13,10 @@ params = {
     "margin_mode": "isolated",  # "isolated" or "cross"
     # Take-Profit and Stop-Loss settings
     "tp_pct": 9,
-    "tp_size_pct": 60,
-    "sl_pct": 8,
+    "tp_size_pct": 70,
+    "sl_pct": 18,
     # Trailing Stop-Loss settings (set to 0 to disable)
-    "trailing_sl_pct": 8,
+    "trailing_sl_pct": 15,
     # EMA settings
     "ema_fast": 30,
     "ema_slow": 40,
