@@ -11,6 +11,8 @@ params = {
     # Position size & leverage
     "position_size_pct": 80.0,
     "leverage": 3,
+    "margin_mode": "isolated",  # "isolated" or "cross"
+
 
     # Take-Profit / Stop-Loss
     "tp_pct": 10,        # matches 95–99th percentile extended moves
@@ -26,7 +28,7 @@ params = {
 
     # Choppiness to avoid grind-phases
     "chop_length": 14,
-    "chop_threshold": 60,  # >60 = too choppy, skip trades
+    "chop_threshold": 6000,  # >60 = too choppy, skip trades
 }
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # Dont forget to set if long only or short only!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
