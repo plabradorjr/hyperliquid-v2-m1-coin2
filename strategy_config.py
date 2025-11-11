@@ -8,7 +8,7 @@ from hyperliquid_client import my_print  # type: ignore
 params = {
     "symbol": "MELANIA/USDC:USDC",
     "timeframe": "5m",
-    "position_size_pct": 140.0,
+    "position_size_pct": 110.0,
     "leverage": 3,
     "margin_mode": "isolated",  # "isolated" or "cross"
     # Take-Profit and Stop-Loss settings
