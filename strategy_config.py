@@ -10,7 +10,7 @@ params = {
 
     # Position size & leverage
     "position_size_pct": 80.0,
-    "leverage": 2,
+    "leverage": 3,
 
     # Take-Profit / Stop-Loss
     "tp_pct": 10,        # matches 95–99th percentile extended moves
