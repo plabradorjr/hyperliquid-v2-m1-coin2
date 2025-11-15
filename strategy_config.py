@@ -6,22 +6,22 @@ from hyperliquid_client import my_print  # type: ignore
 
 # Metamask 1, coin 2
 params = {
-    "symbol": "MELANIA/USDC:USDC",
-    "timeframe": "5m",
+    "symbol": "ZEC/USDC:USDC",
+    "timeframe": "1h",
 
     # Position size & leverage
-    "position_size_pct": 80.0,
-    "leverage": 3,
+    "position_size_pct": 50.0,
+    "leverage": 2,
     "margin_mode": "isolated",  # "isolated" or "cross"
 
 
     # Take-Profit / Stop-Loss
-    "tp_pct": 4.5,
-    "tp_size_pct": 70,
-    "sl_pct": 14,
+    "tp_pct": 11,
+    "tp_size_pct": 60,
+    "sl_pct": 30,
 
     # Trailing Stop-Loss
-    "trailing_sl_pct": 14,
+    "trailing_sl_pct": 30,
 
     # EMA Settings (optimal for breakout bursts)
     "ema_fast": 15,
@@ -35,8 +35,8 @@ params = {
 # Dont forget to set if long only or short only!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # Trading conditions to ignore
-ignore_longs = True
-ignore_shorts = False
+ignore_longs = False
+ignore_shorts = True
 ignore_exit = False
 ignore_tp = False
 ignore_sl = False
