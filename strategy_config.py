@@ -4,39 +4,30 @@ import numpy as np
 
 from hyperliquid_client import my_print  # type: ignore
 
-# Metamask 1, coin 2
+# Metamask 1, coin 2, hyperliquid
+# Trading parameters
 params = {
     "symbol": "ZEC/USDC:USDC",
     "timeframe": "1h",
+    "position_size_pct": 110.0,
+    "leverage": 3,
+    "margin_mode": "isolated",
 
-    # Position size & leverage
-    "position_size_pct": 50.0,
-    "leverage": 2,
-    "margin_mode": "isolated",  # "isolated" or "cross"
+    "tp_pct": 4,
+    "tp_size_pct": 65,
+    "sl_pct": 10,
+    "trailing_sl_pct": 10,  # set to zero to disable trailing SL
 
-
-    # Take-Profit / Stop-Loss
-    "tp_pct": 11,
-    "tp_size_pct": 60,
-    "sl_pct": 30,
-
-    # Trailing Stop-Loss
-    "trailing_sl_pct": 30,
-
-    # EMA Settings (optimal for breakout bursts)
     "ema_fast": 15,
     "ema_slow": 27,
 
-    # Choppiness to avoid grind-phases
-    "chop_length": 14,
-    "chop_threshold": 6000,  # >60 = too choppy, skip trades
+    "chop_length": 21,
+    "chop_threshold": 1000,
 }
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-# Dont forget to set if long only or short only!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 # Trading conditions to ignore
 ignore_longs = False
-ignore_shorts = True
+ignore_shorts = False
 ignore_exit = False
 ignore_tp = False
 ignore_sl = False
@@ -150,7 +141,7 @@ def is_choppy_market(row):
 
 def check_long_entry_condition(row, previous_candle):
     my_print(f"Checking long entry...", verbose)
-    return fast_ema_is_bullish(row) and not is_choppy_market(row)
+    return fast_ema_is_bullish(row)
 
 
 def check_long_exit_condition(row, previous_candle):
@@ -182,7 +173,7 @@ def compute_trailing_long_sl_level(price):
 
 def check_short_entry_condition(row, previous_candle):
     my_print(f"Checking short entry...", verbose)
-    return not fast_ema_is_bullish(row) and not is_choppy_market(row)
+    return not fast_ema_is_bullish(row)
 
 
 def check_short_exit_condition(row, previous_candle):
